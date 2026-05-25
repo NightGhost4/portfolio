@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  background-color: #0C0C0C;
+  color: #F0F0F0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.font-display {
+  font-family: var(--font-bebas), 'Arial Narrow', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0C0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.work-back-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.work-back-link:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+::selection {
+  background: #616161;
+  color: #F0F0F0;
+}
+
+/* Diagonal break edge: a thin white border tracing the wedge hypotenuse
+   (top-left to bottom-center) with a glint that drifts up and down the line. */
+.diagonal-edge {
+  pointer-events: none;
+  /* 3px-wide strip whose left edge sits exactly on the wedge diagonal */
+  clip-path: polygon(0 0, 3px 0, calc(50% + 3px) 100%, 50% 100%);
+  /* a single soft beam of light, transparent everywhere else */
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background-size: 100% 18%;
+  background-repeat: no-repeat;
+  background-position: 0 -20%;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.85));
+  animation: diagonal-glint 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes diagonal-glint {
+  0% {
+    background-position: 0 -20%;
+  }
+  100% {
+    background-position: 0 120%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  .diagonal-edge {
+    animation: none;
+    background-position: 0 50%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
