@@ -39,7 +39,7 @@ export default function IntroSlide() {
         }}
       />
 
-      <div className="relative flex items-center gap-12">
+      <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-12 px-6 text-center md:text-left">
 
         {/* Name block */}
         <motion.div
@@ -53,14 +53,14 @@ export default function IntroSlide() {
           >
             <span
               className="block text-white"
-              style={{ fontSize: "clamp(64px, 9vw, 130px)" }}
+              style={{ fontSize: "clamp(40px, 11vw, 130px)" }}
             >
               TYLER
             </span>
             <span
               className="block"
               style={{
-                fontSize: "clamp(64px, 9vw, 130px)",
+                fontSize: "clamp(40px, 11vw, 130px)",
                 color: "rgba(255,255,255,0.22)",
               }}
             >
@@ -71,7 +71,7 @@ export default function IntroSlide() {
 
         {/* Vertical divider */}
         <motion.div
-          className="self-stretch"
+          className="hidden md:block self-stretch"
           style={{ width: "1px", backgroundColor: "rgba(255,255,255,0.15)" }}
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
@@ -94,10 +94,10 @@ export default function IntroSlide() {
             className="text-white/22 mt-2"
             style={{ fontSize: "11px", letterSpacing: "0.2em" }}
           >
-            DURHAM, NH — 2026
+            BERKSHIRES, MA
           </p>
 
-          <div className="flex gap-5 mt-7">
+          <div className="flex gap-5 mt-7 justify-center md:justify-start">
             {socials.map((s) => (
               <a
                 key={s.label}

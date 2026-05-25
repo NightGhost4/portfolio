@@ -61,13 +61,14 @@ export default async function WorkDetailPage({
       </div>
 
       {/* ── Hero — full viewport, screenshot + gradient ── */}
-      <div className="relative overflow-hidden" style={{ height: "100vh" }}>
+      <div className="relative overflow-hidden h-dvh">
         {/* Background: image / video / mobile / placeholder */}
         <div className="absolute inset-0" style={{ backgroundColor: "#111111" }}>
           <HeroMedia
             name={item.name}
             imagePlaceholder={item.imagePlaceholder}
             imageSrc={item.imageSrc}
+            imageSrcMobile={item.imageSrcMobile}
             videoSrc={item.videoSrc}
             media={item.media}
             priority
@@ -89,18 +90,18 @@ export default async function WorkDetailPage({
         {/* Diagonal break — solid black wedge from top-left to bottom-center,
             matching the home-page background so the bottom-left headers stand out */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           style={{
             clipPath: "polygon(0 0, 50% 100%, 0 100%)",
             backgroundColor: "#0C0C0C",
           }}
         />
 
-        {/* Glistening white border along the diagonal edge */}
-        <div className="absolute inset-0 diagonal-edge" />
+        {/* Glistening white border along the diagonal edge (desktop only) */}
+        <div className="absolute inset-0 diagonal-edge hidden md:block" />
 
-        {/* Hero content — bottom left */}
-        <div className="absolute" style={{ bottom: "64px", left: "64px", right: "40%" }}>
+        {/* Hero content — bottom left (full-width on mobile) */}
+        <div className="absolute left-6 right-6 bottom-12 md:left-16 md:right-[40%] md:bottom-16">
           <p
             style={{
               fontSize: "10px",
@@ -115,7 +116,7 @@ export default async function WorkDetailPage({
             className="leading-none"
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(52px, 8vw, 120px)",
+              fontSize: "clamp(36px, 8vw, 120px)",
               color: "#F0F0F0",
               marginBottom: "12px",
             }}
@@ -136,7 +137,7 @@ export default async function WorkDetailPage({
 
         {/* Scroll indicator */}
         <div
-          className="absolute"
+          className="absolute hidden md:block"
           style={{
             bottom: "32px",
             right: "40px",
@@ -150,7 +151,7 @@ export default async function WorkDetailPage({
       </div>
 
       {/* ── Content sections ── */}
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "80px 64px 120px" }}>
+      <div className="px-6 pt-16 pb-24 md:px-16 md:pt-20 md:pb-30" style={{ maxWidth: "1100px", margin: "0 auto" }}>
 
         {/* Overview */}
         <section style={{ marginBottom: "80px" }}>
@@ -378,7 +379,7 @@ export default async function WorkDetailPage({
                 ))}
               </div>
             ) : (
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {item.screenshots.map((src, i) => (
                   <div
                     key={src}
@@ -397,7 +398,7 @@ export default async function WorkDetailPage({
               </div>
             )
           ) : (
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[1, 2].map((n) => (
                 <div
                   key={n}

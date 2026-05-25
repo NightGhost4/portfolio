@@ -35,12 +35,12 @@ const f = (delay: number) => ({
 export default function ContactSlide() {
   return (
     <div
-      className="w-full h-full flex items-center"
+      className="w-full h-full overflow-y-auto flex items-start md:items-center py-20 md:py-0"
       style={{ backgroundColor: "#0C0C0C" }}
     >
       {/* Large decorative bg text */}
       <div
-        className="absolute right-0 bottom-0 select-none pointer-events-none"
+        className="absolute right-0 bottom-0 select-none pointer-events-none hidden md:block"
         style={{ lineHeight: 0.85, overflow: "hidden" }}
       >
         <p
@@ -55,8 +55,8 @@ export default function ContactSlide() {
       </div>
 
       <div
-        className="relative z-10"
-        style={{ padding: "0 80px", maxWidth: "900px" }}
+        className="relative z-10 px-6 md:px-20"
+        style={{ maxWidth: "900px" }}
       >
         <motion.p
           className="text-white/22 mb-10"
@@ -70,7 +70,7 @@ export default function ContactSlide() {
           className="text-white leading-none mb-6"
           style={{
             fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(52px, 8vw, 118px)",
+            fontSize: "clamp(40px, 9vw, 118px)",
           }}
           {...f(0.06)}
         >

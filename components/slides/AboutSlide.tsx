@@ -25,12 +25,12 @@ const f = (delay: number) => ({
 export default function AboutSlide() {
   return (
     <div
-      className="w-full h-full flex items-center"
+      className="w-full h-full overflow-y-auto flex items-start md:items-center py-20 md:py-0"
       style={{ backgroundColor: "#0C0C0C" }}
     >
       {/* Large decorative background text */}
       <div
-        className="absolute right-0 bottom-0 select-none pointer-events-none leading-none"
+        className="absolute right-0 bottom-0 select-none pointer-events-none leading-none hidden md:block"
         style={{ overflow: "hidden" }}
       >
         <p
@@ -46,10 +46,10 @@ export default function AboutSlide() {
       </div>
 
       <div
-        className="relative z-10 w-full"
-        style={{ padding: "0 80px", maxWidth: "1300px", margin: "0 auto" }}
+        className="relative z-10 w-full px-6 md:px-20"
+        style={{ maxWidth: "1300px", margin: "0 auto" }}
       >
-        <div className="grid gap-16" style={{ gridTemplateColumns: "1fr 1fr" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
 
           {/* Left column */}
           <div>

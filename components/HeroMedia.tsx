@@ -11,6 +11,8 @@ interface HeroMediaProps {
   media?: "desktop" | "mobile";
   /** Poster shown before/instead of the video; defaults to imageSrc. */
   poster?: string;
+  /** Optional mobile-specific hero image (shown below md instead of imageSrc). */
+  imageSrcMobile?: string;
   /** Mark as LCP (detail-page hero). */
   priority?: boolean;
 }
@@ -28,6 +30,7 @@ export default function HeroMedia({
   videoSrc,
   media = "desktop",
   poster,
+  imageSrcMobile,
   priority,
 }: HeroMediaProps) {
   const reduceMotion = useReducedMotion();
@@ -66,12 +69,9 @@ export default function HeroMedia({
           />
           {/* Sharp phone screenshot, rounded like a device, left of center */}
           <div
-            className="absolute"
+            className="absolute left-1/2 md:left-[40%] top-[42%] md:top-1/2 h-[62%] md:h-[72%]"
             style={{
-              top: "50%",
-              left: "40%",
               transform: "translate(-50%, -50%)",
-              height: "72%",
               aspectRatio: "339 / 706",
               borderRadius: "20px",
               overflow: "hidden",
@@ -90,14 +90,28 @@ export default function HeroMedia({
       );
     }
     return (
-      <Image
-        src={stillSrc}
-        alt={name}
-        fill
-        priority={priority}
-        sizes="100vw"
-        style={{ objectFit: "cover", objectPosition: "center top" }}
-      />
+      <>
+        {imageSrcMobile && (
+          <Image
+            src={imageSrcMobile}
+            alt={name}
+            fill
+            priority={priority}
+            sizes="100vw"
+            className="md:hidden"
+            style={{ objectFit: "cover", objectPosition: "center top" }}
+          />
+        )}
+        <Image
+          src={stillSrc}
+          alt={name}
+          fill
+          priority={priority}
+          sizes="100vw"
+          className={imageSrcMobile ? "hidden md:block" : undefined}
+          style={{ objectFit: "cover", objectPosition: "center top" }}
+        />
+      </>
     );
   }
 

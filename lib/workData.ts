@@ -6,6 +6,8 @@ export interface WorkItem {
   description: string;
   tech: string[];
   imageSrc?: string;
+  /** Optional mobile-specific hero image (shown below the md breakpoint). */
+  imageSrcMobile?: string;
   videoSrc?: string;
   /** "mobile" => portrait phone assets (shown contained, not cropped). Defaults to desktop. */
   media?: "desktop" | "mobile";
@@ -30,6 +32,7 @@ export const workItems: WorkItem[] = [
       "Architected and shipped client-facing products including a full-stack finance portal, a public illness database backed by a proprietary agentic content pipeline, and a community health platform with embedded AI tooling.",
     tech: ["Agentic Systems", "Full-Stack", "Finance", "Healthtech"],
     imageSrc: "/agent-integrator.png",
+    imageSrcMobile: "/agent-integrator-hero-mobile.png",
     imagePlaceholder: "AGENT INTEGRATOR SCREENSHOT",
     awards: [],
     carouselLinks: [{ label: "EXPLORE", href: "/work/agent-integrator" }],

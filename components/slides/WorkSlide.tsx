@@ -9,6 +9,7 @@ export interface WorkSlideData {
   description: string;
   tech: string[];
   imageSrc?: string;
+  imageSrcMobile?: string;
   videoSrc?: string;
   media?: "desktop" | "mobile";
   imagePlaceholder: string;
@@ -32,6 +33,7 @@ export default function WorkSlide({ data }: { data: WorkSlideData }) {
           name={data.name}
           imagePlaceholder={data.imagePlaceholder}
           imageSrc={data.imageSrc}
+          imageSrcMobile={data.imageSrcMobile}
           videoSrc={data.videoSrc}
           media={data.media}
         />
@@ -52,21 +54,18 @@ export default function WorkSlide({ data }: { data: WorkSlideData }) {
       {/* ── Diagonal break — solid black wedge from top-left to bottom-center,
           matching the home-page background so the bottom-left headers stand out ── */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 hidden md:block"
         style={{
           clipPath: "polygon(0 0, 50% 100%, 0 100%)",
           backgroundColor: "#0C0C0C",
         }}
       />
 
-      {/* ── Glistening white border along the diagonal edge ── */}
-      <div className="absolute inset-0 diagonal-edge" />
+      {/* ── Glistening white border along the diagonal edge (desktop only) ── */}
+      <div className="absolute inset-0 diagonal-edge hidden md:block" />
 
-      {/* ── Content — anchored bottom-left ── */}
-      <div
-        className="absolute"
-        style={{ bottom: "80px", left: "64px", right: "40%" }}
-      >
+      {/* ── Content — anchored bottom-left (full-width on mobile) ── */}
+      <div className="absolute left-6 right-6 bottom-12 md:left-16 md:right-[40%] md:bottom-20">
         {/* Category */}
         <motion.p
           className="text-white/38 mb-3"
@@ -83,7 +82,7 @@ export default function WorkSlide({ data }: { data: WorkSlideData }) {
           className="text-white leading-none mb-3"
           style={{
             fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(52px, 7.5vw, 110px)",
+            fontSize: "clamp(36px, 7.5vw, 110px)",
           }}
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}

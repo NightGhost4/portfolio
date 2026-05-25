@@ -24,6 +24,7 @@ const SLIDES: Slide[] = [
     description: w.description,
     tech: w.tech,
     imageSrc: w.imageSrc,
+    imageSrcMobile: w.imageSrcMobile,
     videoSrc: w.videoSrc,
     media: w.media,
     imagePlaceholder: w.imagePlaceholder,
@@ -60,7 +61,9 @@ function NavArrow({
       onMouseLeave={() => setActive(false)}
       onFocus={() => setActive(true)}
       onBlur={() => setActive(false)}
-      className={`absolute ${isLeft ? "left-5" : "right-5"} top-1/2 -translate-y-1/2 z-50 flex items-center justify-center`}
+      className={`absolute z-50 flex items-center justify-center top-6 md:top-1/2 md:-translate-y-1/2 ${
+        isLeft ? "left-5" : "left-20 md:left-auto md:right-5"
+      }`}
       style={{
         width: "44px",
         height: "44px",
@@ -115,7 +118,7 @@ export default function Carousel() {
   const slide = SLIDES[index];
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden" style={{ backgroundColor: "#0C0C0C" }}>
+    <div className="relative w-screen h-dvh overflow-hidden" style={{ backgroundColor: "#0C0C0C" }}>
 
       {/* ── Slide content ── */}
       <AnimatePresence initial={false} custom={dir} mode="wait">
@@ -127,6 +130,13 @@ export default function Carousel() {
           animate="center"
           exit="exit"
           transition={{ duration: 0.5, ease }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={(_, info) => {
+            if (info.offset.x < -60 || info.velocity.x < -500) go(1);
+            else if (info.offset.x > 60 || info.velocity.x > 500) go(-1);
+          }}
           className="absolute inset-0"
         >
           {slide.type === "intro" && <IntroSlide />}
@@ -151,7 +161,10 @@ export default function Carousel() {
       <NavArrow direction="right" onClick={() => go(1)} />
 
       {/* ── Dot navigation (bottom-center) ── */}
-      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-50 flex gap-2 items-center">
+      <div
+        className="absolute left-1/2 -translate-x-1/2 z-50 flex gap-2 items-center"
+        style={{ bottom: "calc(1.75rem + env(safe-area-inset-bottom))" }}
+      >
         {SLIDES.map((_, i) => (
           <button
             key={i}
