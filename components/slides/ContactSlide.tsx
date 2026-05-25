@@ -22,7 +22,7 @@ const links = [
   {
     label: "RESUME",
     display: "Download PDF",
-    href: "/Tyler-Norcross-Resume.pdf",
+    href: "/tyler_norcross_resume.pdf",
   },
 ];
 
