@@ -160,9 +160,9 @@ export default function Carousel() {
       <NavArrow direction="left" onClick={() => go(-1)} />
       <NavArrow direction="right" onClick={() => go(1)} />
 
-      {/* ── Dot navigation (bottom-center) ── */}
+      {/* ── Dot navigation (bottom-right on mobile, bottom-center on desktop) ── */}
       <div
-        className="absolute left-1/2 -translate-x-1/2 z-50 flex gap-2 items-center"
+        className="absolute right-6 md:right-auto md:left-1/2 md:-translate-x-1/2 z-50 flex gap-2 items-center"
         style={{ bottom: "calc(1.75rem + env(safe-area-inset-bottom))" }}
       >
         {SLIDES.map((_, i) => (

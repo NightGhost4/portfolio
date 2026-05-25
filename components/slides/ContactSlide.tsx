@@ -35,7 +35,7 @@ const f = (delay: number) => ({
 export default function ContactSlide() {
   return (
     <div
-      className="w-full h-full overflow-y-auto flex items-start md:items-center py-20 md:py-0"
+      className="w-full h-full overflow-y-auto touch-pan-y flex items-start md:items-center py-20 md:py-0"
       style={{ backgroundColor: "#0C0C0C" }}
     >
       {/* Large decorative bg text */}
