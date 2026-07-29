@@ -56,6 +56,44 @@ export const workItems: WorkItem[] = [
     ],
   },
   {
+    slug: "orstrum",
+    category: "PRODUCT / 2026",
+    name: "ORSTRUM",
+    tagline: "Persistent Code Intelligence for AI Agents",
+    description:
+      "A published npm CLI that parses TypeScript, JavaScript, and Python into a queryable SQLite import graph, then serves it to coding agents over MCP — eight tools including multi-hop blast-radius analysis. Structure only; source never leaves the machine.",
+    tech: ["MCP", "TypeScript", "SQLite", "AST Parsing"],
+    imageSrc: "/orstrum.png",
+    imagePlaceholder: "ORSTRUM SCREENSHOT",
+    awards: [],
+    carouselLinks: [
+      { label: "EXPLORE", href: "/work/orstrum" },
+      { label: "LIVE", href: "https://www.orstrum.com" },
+    ],
+    overview:
+      "Orstrum is a code intelligence layer I designed, built, and shipped end to end — a published npm CLI, an MCP server, and a hosted cloud product. It walks TypeScript, JavaScript, and Python repositories with real AST parsers, resolves every import edge, and writes the result to a local SQLite graph. Coding agents then query that graph through MCP instead of burning tokens on recursive grep-and-read loops. Only structure and generated summaries are stored — raw source never leaves the machine.",
+    highlights: [
+      "Published to npm as a global CLI — one command scans a repo into a queryable graph of files, exports, and import edges",
+      "Parses TypeScript and JavaScript with ts-morph and Python with tree-sitter, resolving path aliases and barrel re-exports through the AST rather than text search",
+      "Exposes the graph to coding agents through eight MCP tools, including multi-hop blast-radius analysis over the caller graph",
+      "Built Orstrum Cloud on Astro and Supabase — GitHub OAuth, team workspaces, Stripe billing, and a radial graph explorer",
+      "Batch summarizer prices the job before it runs and generates per-file purpose summaries via the Anthropic API with prompt caching",
+      "Incremental scans are content-hashed, so re-running only rewrites files that actually changed and never discards existing summaries",
+    ],
+    stack: {
+      CLI: ["TypeScript", "Node.js", "ts-morph", "tree-sitter", "Ink"],
+      Graph: ["SQLite", "MCP SDK", "AST Resolution"],
+      AI: ["Anthropic API", "Claude Haiku 4.5", "Prompt Caching"],
+      Cloud: ["Astro", "Supabase", "Stripe", "Vercel"],
+    },
+    screenshots: ["/orstrum-feature-1.png", "/orstrum-feature-2.png"],
+    externalLinks: [
+      { label: "LIVE", href: "https://www.orstrum.com" },
+      { label: "NPM", href: "https://www.npmjs.com/package/orstrum" },
+      { label: "DOCS", href: "https://www.orstrum.com/docs" },
+    ],
+  },
+  {
     slug: "taskmind",
     category: "TECHNICAL CO-FOUNDER / 2025",
     name: "TASKMIND",
