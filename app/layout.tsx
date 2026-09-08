@@ -22,7 +22,7 @@ const bebas = Bebas_Neue({
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tylernorcross.com";
-const TITLE = "Tyler Norcross — Founding Engineer";
+const TITLE = "Tyler Norcross — Software Engineer @ SideShift";
 const DESCRIPTION =
   "I build AI-native software — agentic systems, full-stack platforms, and the infrastructure that makes intelligent products actually work in production.";
 

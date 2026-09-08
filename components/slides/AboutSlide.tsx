@@ -5,7 +5,7 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 const stats = [
   { value: "MAY 2026", label: "UNH CS Graduate" },
-  { value: "2 YRS", label: "Building in Production" },
+  { value: "3 YRS", label: "Building in Production" },
   { value: "2", label: "Companies Co-Founded" },
   { value: "4+", label: "AI Projects Shipped" },
 ];
@@ -70,8 +70,8 @@ export default function AboutSlide() {
               }}
               {...f(0.08)}
             >
-              I&apos;ve spent the last two years building real products rather
-              than waiting on my graduation date.
+              I&apos;ve spent the last three years shipping production software
+              — two of them before I had the degree to prove it.
             </motion.p>
 
             <motion.p
@@ -92,9 +92,10 @@ export default function AboutSlide() {
               style={{ fontSize: "13px" }}
               {...f(0.2)}
             >
-              As a previous founding engineer at Agent Integrator, I&apos;m well-versed in AI-native
-              architecture, embedding products inside businesses workflows, and shipping
-              agentic systems & orchestration layers.
+              I&apos;m now a software engineer at SideShift, building the platform brands use to
+              run creator marketing campaigns end to end. Before that, as founding engineer at
+              Agent Integrator, I worked in AI-native architecture, embedding products inside
+              business workflows, and shipping agentic systems & orchestration layers.
             </motion.p>
           </div>
 

@@ -24,6 +24,39 @@ export interface WorkItem {
 
 export const workItems: WorkItem[] = [
   {
+    slug: "sideshift",
+    category: "SOFTWARE ENGINEER / 2026–PRESENT",
+    name: "SIDESHIFT",
+    tagline: "Creator Marketing Platform",
+    description:
+      "Full-stack product work on the brand dashboard — campaign briefs, applicant review, and creator marketplace — alongside the payout and real-time reporting surfaces, plus AI-backed features across the applicant pipeline.",
+    tech: ["TypeScript", "Next.js", "PostgreSQL", "GCP"],
+    imageSrc: "/sideshift.png",
+    imagePlaceholder: "SIDESHIFT SCREENSHOT",
+    awards: [],
+    carouselLinks: [
+      { label: "EXPLORE", href: "/work/sideshift" },
+      { label: "LIVE", href: "https://sideshift.app" },
+    ],
+    overview:
+      "SideShift is a creator marketing platform that replaces the email, Slack, and spreadsheet sprawl behind user-generated content campaigns. Brands post a campaign brief, vetted creators apply, and the platform handles centralized communication, real-time performance tracking, and automated payouts — serving 3,000+ brands across tech, finance, CPG, health and wellness, and entertainment against a pool of over a million creators. I work full-stack across the product.",
+    highlights: [
+      "Full-stack product engineering across the brand dashboard — campaign briefs, applicant review, and creator marketplace browsing",
+      "Build and maintain the payout surfaces that move money to creators once their content is approved",
+      "Ship the real-time campaign performance and reporting views brands use to judge what's working",
+      "Work on AI-backed features across the applicant and content pipeline",
+    ],
+    stack: {
+      Frontend: ["React", "Next.js", "TypeScript"],
+      Backend: ["Node.js", "PostgreSQL"],
+      Infra: ["GCP"],
+    },
+    screenshots: ["/sideshift-feature-1.png", "/sideshift-feature-2.png"],
+    externalLinks: [
+      { label: "WEBSITE", href: "https://sideshift.app" },
+    ],
+  },
+  {
     slug: "agent-integrator",
     category: "FOUNDING ENGINEER / 2025–2026",
     name: "AGENT INTEGRATOR",
