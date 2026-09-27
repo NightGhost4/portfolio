@@ -63,7 +63,7 @@ export default function ContactSlide() {
           style={{ fontSize: "9px", letterSpacing: "0.32em" }}
           {...f(0)}
         >
-          [ CURRENTLY AT SIDESHIFT ]
+          [ OPEN TO CONVERSATIONS ]
         </motion.p>
 
         <motion.h2
@@ -76,10 +76,10 @@ export default function ContactSlide() {
         >
           CURRENTLY
           <br />
-          BUILDING AT
+          BUILDING
           <br />
           <span style={{ color: "rgba(255,255,255,0.28)" }}>
-            SIDESHIFT.
+            SOMETHING NEW.
           </span>
         </motion.h2>
 

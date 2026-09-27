@@ -25,7 +25,7 @@ export interface WorkItem {
 export const workItems: WorkItem[] = [
   {
     slug: "sideshift",
-    category: "SOFTWARE ENGINEER / 2026–PRESENT",
+    category: "SOFTWARE ENGINEER / 2026",
     name: "SIDESHIFT",
     tagline: "Creator Marketing Platform",
     description:
@@ -39,12 +39,12 @@ export const workItems: WorkItem[] = [
       { label: "LIVE", href: "https://sideshift.app" },
     ],
     overview:
-      "SideShift is a creator marketing platform that replaces the email, Slack, and spreadsheet sprawl behind user-generated content campaigns. Brands post a campaign brief, vetted creators apply, and the platform handles centralized communication, real-time performance tracking, and automated payouts — serving 3,000+ brands across tech, finance, CPG, health and wellness, and entertainment against a pool of over a million creators. I work full-stack across the product.",
+      "SideShift is a creator marketing platform that replaces the email, Slack, and spreadsheet sprawl behind user-generated content campaigns. Brands post a campaign brief, vetted creators apply, and the platform handles centralized communication, real-time performance tracking, and automated payouts — serving 3,000+ brands across tech, finance, CPG, health and wellness, and entertainment against a pool of over a million creators. I worked full-stack across the product.",
     highlights: [
       "Full-stack product engineering across the brand dashboard — campaign briefs, applicant review, and creator marketplace browsing",
-      "Build and maintain the payout surfaces that move money to creators once their content is approved",
-      "Ship the real-time campaign performance and reporting views brands use to judge what's working",
-      "Work on AI-backed features across the applicant and content pipeline",
+      "Built and maintained the payout surfaces that move money to creators once their content is approved",
+      "Shipped the real-time campaign performance and reporting views brands used to judge what's working",
+      "Worked on AI-backed features across the applicant and content pipeline",
     ],
     stack: {
       Frontend: ["React", "Next.js", "TypeScript"],

@@ -92,7 +92,7 @@ export default function AboutSlide() {
               style={{ fontSize: "13px" }}
               {...f(0.2)}
             >
-              I&apos;m now a software engineer at SideShift, building the platform brands use to
+              Most recently I was a software engineer at SideShift, building the platform brands use to
               run creator marketing campaigns end to end. Before that, as founding engineer at
               Agent Integrator, I worked in AI-native architecture, embedding products inside
               business workflows, and shipping agentic systems & orchestration layers.
